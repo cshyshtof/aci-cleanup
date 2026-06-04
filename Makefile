@@ -3,6 +3,7 @@
 SCRIPT := aci-cleanup.py
 VCENTER_SCRIPT := cleanup-vcenter-aci.py
 GITCONFIG := .gitconfig
+MAKEFLAGS += --no-print-directory
 
 .PHONY: help init
 .PHONY: run run-check
@@ -21,24 +22,24 @@ init: ## Create virtual environment and install dependencies
 	uv sync
 
 run: ## Run ACI and vCenter cleanup
-	make run-vcenter
-	make run-aci
+	@make run-vcenter
+	@make run-aci
 
 run-check: ## Run ACI and vCenter cleanup check
-	make run-vcenter-check
-	make run-aci-check
+	@make run-vcenter-check
+	@make run-aci-check
 
 run-aci: ## Run ACI cleanup (requires ACI_HOST, ACI_USER, ACI_PASS)
 	uv run $(SCRIPT)
 
 run-aci-check: ## Run ACI cleanup check (requires ACI_HOST, ACI_USER, ACI_PASS)
-	uv run $(SCRIPT) --check
+	uv run $(SCRIPT) --check --log-level ERROR
 
 run-vcenter: ## Run APIC/vCenter DVS cleanup
 	uv run $(VCENTER_SCRIPT)
 
 run-vcenter-check: ## Run APIC/vCenter DVS cleanup connectivity check
-	uv run $(VCENTER_SCRIPT) --check
+	uv run $(VCENTER_SCRIPT) --check --log-level ERROR
 
 format: ## Format code with ruff (modifies file)
 	uv run ruff format $(SCRIPT) $(VCENTER_SCRIPT)
