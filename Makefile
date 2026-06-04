@@ -4,7 +4,7 @@ SCRIPT := aci-cleanup.py
 VCENTER_SCRIPT := cleanup-vcenter-aci.py
 GITCONFIG := .gitconfig
 
-.PHONY: help init run-aci run-aci-check run-vcenter run-vcenter-check format check clean
+.PHONY: help init run run-aci run-aci-check run-vcenter run-vcenter-check format check clean
 .PHONY: git-init sync push wip
 
 help: ## Show available targets
@@ -19,6 +19,10 @@ init: ## Create virtual environment and install dependencies
 run: ## Run ACI and vCenter cleanup
 	make run-vcenter
 	make run-aci
+
+run-check: ## Run ACI and vCenter cleanup check
+	make run-vcenter-check
+	make run-aci-check
 
 run-aci: ## Run ACI cleanup (requires ACI_HOST, ACI_USER, ACI_PASS)
 	uv run $(SCRIPT)
