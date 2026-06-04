@@ -1,10 +1,10 @@
 # ACI Cleanup
 
 > [!CAUTION]
-> This repo is for LAB usage ONLY!
+> This repo is for LAB usage ONLY !!!
 
 > [!CAUTION]
-> SCRIPTS IN THIS REPO ARE DESTRUCTIVE TO ACI AND VCENTER
+> SCRIPTS IN THIS REPO ARE DESTRUCTIVE TO ACI AND VCENTER !!!
 
 > [!CAUTION]
 > Use on your own risk !!!
@@ -136,7 +136,7 @@ uv run cleanup-vcenter-aci.py
 2026-04-24T10:00:01 [INFO    ] === ACI Cleanup started (APIC: 192.168.1.1) ===
 2026-04-24T10:00:01 [INFO    ] Loaded 6 switches from switches.csv
 2026-04-24T10:00:02 [INFO    ] APIC REST API login successful: 192.168.1.1
-2026-04-24T10:00:02 [INFO    ] Discovered leaf node: leaf101 at 10.10.244.101
+2026-04-24T10:00:02 [INFO    ] Discovered leaf node: leaf101 at 10.1.44.101
 2026-04-24T10:00:02 [INFO    ] Fetched 6 fabric nodes from APIC API
 2026-04-24T10:00:02 [INFO    ] Starting APIC SSH cleanup: 192.168.1.1
 2026-04-24T10:00:03 [INFO    ] SSH connecting to 192.168.1.1
@@ -144,7 +144,7 @@ uv run cleanup-vcenter-aci.py
 2026-04-24T10:00:05 [INFO    ] SSH [192.168.1.1] >>> acidiag touch setup
 2026-04-24T10:00:07 [INFO    ] SSH [192.168.1.1] >>> acidiag reboot
 2026-04-24T10:00:09 [INFO    ] APIC cleanup commands dispatched successfully
-2026-04-24T10:00:09 [INFO    ] Cleaning switch leaf101 at 10.10.244.101 (source: API)
+2026-04-24T10:00:09 [INFO    ] Cleaning switch leaf101 at 10.1.44.101 (source: API)
 ...
 2026-04-24T10:01:30 [INFO    ] === ACI Cleanup completed ===
 ```
@@ -198,7 +198,7 @@ Check `ACI_USER` and `ACI_PASS`. Make sure the account has the required APIC API
 ### Switch Unreachable Through SSH
 
 ```
-[ERROR   ] Switch leaf101 (10.10.244.101) failed: [Errno 110] Connection timed out
+[ERROR   ] Switch leaf101 (10.1.44.101) failed: [Errno 110] Connection timed out
 ```
 
 The script continues with the remaining switches and prints a final error summary. Check the switch OOB management reachability.
