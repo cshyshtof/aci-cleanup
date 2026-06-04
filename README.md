@@ -2,7 +2,11 @@
 
 > [!CAUTION]
 > This repo is for LAB usage ONLY!
+
+> [!CAUTION]
 > SCRIPTS IN THIS REPO ARE DESTRUCTIVE TO ACI AND VCENTER
+
+> [!CAUTION]
 > Use on your own risk !!!
 
 Automates factory reset operations for a Cisco ACI fabric. The main script connects to APIC through the REST API to discover switch OOB addresses, then resets APIC and each fabric switch.
@@ -71,9 +75,9 @@ source .env
 The `switches.csv` file maps switch names to OOB IP addresses. The format is `switch_name,switch_ip`, without a header row.
 
 ```
-"leaf101","10.10.244.101"
-"leaf102","10.10.244.102"
-"spine121","10.10.244.121"
+"leaf101","10.1.44.101"
+"leaf102","10.1.44.102"
+"spine121","10.1.44.121"
 ```
 
 CSV addresses are used as a fallback. If APIC returns an OOB address for a switch, the APIC value takes priority.
@@ -214,6 +218,14 @@ make check    # show lint and formatting errors without modifying files
 make format   # apply ruff formatting automatically
 ```
 
-## Final note
+## License
 
-This repo was written with AI assistance
+This project is licensed under the MIT License - see the LICENSE file for details. Support
+
+## Final notes
+
+> [!NOTE]
+> Legal Notice: This repo is provided "as is", without warranty of any kind, express or implied. No guarantees are made regarding its functionality or suitability for any particular purpose. The author assumes no responsibility or liability for any damages, losses, or consequences resulting from the use, misuse, or inability to use this repo.
+
+> [!NOTE]
+> AI assited coding
