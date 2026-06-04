@@ -4,7 +4,11 @@ SCRIPT := aci-cleanup.py
 VCENTER_SCRIPT := cleanup-vcenter-aci.py
 GITCONFIG := .gitconfig
 
-.PHONY: help init run run-aci run-aci-check run-vcenter run-vcenter-check format check clean
+.PHONY: help init
+.PHONY: run run-check
+.PHONY: run-aci run-aci-check
+.PHONY: run-vcenter run-vcenter-check
+.PHONY: format check clean
 .PHONY: git-init sync push wip
 
 help: ## Show available targets
