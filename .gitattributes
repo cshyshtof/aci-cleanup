@@ -1,0 +1,38 @@
+# Auto-detect text files and normalize line endings
+* text=auto eol=lf
+
+# --- Container definition ---
+Dockerfile text eol=lf
+
+# --- Build system ---
+Makefile text eol=lf
+*.mk     text eol=lf
+
+# --- YAML ---
+*.yml  text diff=yaml eol=lf
+*.yaml text diff=yaml eol=lf
+
+# --- Python requirements ---
+*.txt text eol=lf
+
+# --- Documentation ---
+*.md  text eol=lf
+*.rst text eol=lf
+
+# --- Scripts ---
+*.sh text eol=lf
+
+# --- Git / dotfiles ---
+.gitattributes text eol=lf
+.gitignore     text eol=lf
+
+# --- Archives ---
+*.zip binary
+*.tar binary
+*.gz  binary
+*.tgz binary
+
+# --- Images ---
+*.png  binary
+*.jpg  binary
+*.jpeg binary

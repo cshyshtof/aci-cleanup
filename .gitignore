@@ -1,0 +1,50 @@
+# Local files
+switches.csv
+
+# AI
+.claude/
+.cursor/
+.cursorignore
+CLAUDE.md
+settings.local.json
+
+# Virtual environment
+.venv/
+venv/
+
+# Ruff cache
+.ruff_cache/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# UV cache
+.uv/
+uv.lock
+
+# Secrets and environment variables (NEVER commit!)
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Docker build cache
+*.tar
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+*.swp
+*~
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+*.log
